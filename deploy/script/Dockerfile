@@ -1,7 +1,8 @@
-FROM nginx:1.25.1
+FROM nginx:latest
 
-WORKDIR /root/gin-vue-admin/
+WORKDIR /root/
 
+# COPY cert/ /etc/nginx/cert/
 COPY gin-vue-admin/web.conf /etc/nginx/conf.d/web.conf
 COPY gin-vue-admin/dist/ /usr/share/nginx/html/
 RUN cat /etc/nginx/nginx.conf
